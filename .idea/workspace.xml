@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="worked home, reg, log">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/numo/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/views.py" afterDir="false" />
@@ -109,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714479986814</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="worked home, reg, log">
+      <option name="closed" value="true" />
+      <created>1714582616216</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714582616216</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
