@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/numo/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/views.py" afterDir="false" />
     </list>
@@ -67,20 +69,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "two.files.diff.last.used.file": "C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates" />
       <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\registration" />
     </key>
   </component>
@@ -117,13 +120,22 @@
       <option name="project" value="LOCAL" />
       <updated>1714582616216</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="worked lodin and register">
+      <option name="closed" value="true" />
+      <created>1714655029771</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714655029771</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="worked home, reg, log" />
-    <option name="LAST_COMMIT_MESSAGE" value="worked home, reg, log" />
+    <MESSAGE value="worked lodin and register" />
+    <option name="LAST_COMMIT_MESSAGE" value="worked lodin and register" />
   </component>
 </project>

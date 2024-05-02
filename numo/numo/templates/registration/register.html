@@ -6,6 +6,14 @@
     <title>Реєстрація</title>
 </head>
 <body>
+{% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
     <h2>Реєстрація</h2>
     <form method="post">
         {% csrf_token %}
