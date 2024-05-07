@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Advertisement</title>
+</head>
+<body>
+    <h2>Add Advertisement</h2>
+    {% if advertisement_added %}
+        <p>Оголошення вже додано.</p>
+        <a href="{% url 'advertisement_list' %}">Go to advertisement list</a>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+</body>
+</html>
+

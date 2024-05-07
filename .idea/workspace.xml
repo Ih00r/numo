@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/welcome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/add_advertisement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/advertisement_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/numo/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/views.py" afterDir="false" />
     </list>
@@ -128,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714655029771</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="worked lodin and register">
+      <option name="closed" value="true" />
+      <created>1714672561462</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714672561462</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

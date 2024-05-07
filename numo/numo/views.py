@@ -3,9 +3,10 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.views import View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, AdvertisementForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from .models import Advertisement
 
 def home(request):
     return render(request, 'home.html', {})
@@ -56,3 +57,24 @@ def welcome(request):
     }
 
     return render(request, 'welcome.html', context)
+@login_required
+def add_advertisement(request):
+    advertisement_added = False
+    if request.method == 'POST':
+        form = AdvertisementForm(request.POST)
+        if form.is_valid():
+            user = request.user
+            if Advertisement.objects.filter(user=user).exists():
+                advertisement_added = True
+            else:
+                advertisement = form.save(commit=False)
+                advertisement.user = user
+                advertisement.save()
+                return redirect('advertisement_list')  # Redirect to advertisement list page
+    else:
+        form = AdvertisementForm()
+    return render(request, 'add_advertisement.html', {'form': form, 'advertisement_added': advertisement_added})
+
+def advertisement_list(request):
+    advertisements = Advertisement.objects.all()
+    return render(request, 'advertisement_list.html', {'advertisements': advertisements})
