@@ -9,6 +9,8 @@ class Advertisement(models.Model):
     phone_number = models.CharField(max_length=20)
     city = models.CharField(max_length=50)
     age = models.PositiveIntegerField()
+    id = models.AutoField(primary_key=True)
+
 
     def __str__(self):
         return self.title

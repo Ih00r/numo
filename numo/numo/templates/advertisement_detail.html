@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertisement Detail</title>
+</head>
+<body>
+    <h2>Advertisement Detail</h2>
+    <p>Content of the advertisement goes here...</p>
+    <a href="{% url 'edit_advertisement' advertisement.id %}">Змінити оголошення</a>
+    <form action="{% url 'delete_advertisement' advertisement.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Видалити оголошення</button>
+    </form>
+</body>
+</html>

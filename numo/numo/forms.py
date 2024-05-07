@@ -17,3 +17,9 @@ class AdvertisementForm(forms.ModelForm):
     class Meta:
         model = Advertisement
         fields = ['title', 'description', 'phone_number', 'city', 'age']
+
+
+class ProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username', 'email']

@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.views import View
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .forms import CustomUserCreationForm, AdvertisementForm
+from .forms import CustomUserCreationForm, AdvertisementForm, ProfileEditForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Advertisement
@@ -78,3 +78,42 @@ def add_advertisement(request):
 def advertisement_list(request):
     advertisements = Advertisement.objects.all()
     return render(request, 'advertisement_list.html', {'advertisements': advertisements})
+
+@login_required
+def edit_profile(request):
+    user = request.user
+    if request.method == 'POST':
+        form = ProfileEditForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('welcome')
+    else:
+        form = ProfileEditForm(instance=user)
+    return render(request, 'edit_profile.html', {'form': form})
+
+def my_advertisements_view(request):
+    user = request.user
+    advertisements = Advertisement.objects.filter(user=user)
+    return render(request, 'my_advertisements.html', {'advertisements': advertisements})
+
+def advertisement_detail_view(request, advertisement_id):
+    advertisement = get_object_or_404(Advertisement, id=advertisement_id)
+    return render(request, 'advertisement_detail.html', {'advertisement': advertisement})
+
+def edit_advertisement_view(request, advertisement_id):
+    advertisement = get_object_or_404(Advertisement, id=advertisement_id)
+    if request.method == 'POST':
+        form = AdvertisementForm(request.POST, instance=advertisement)
+        if form.is_valid():
+            form.save()
+            return redirect('advertisement_detail', advertisement_id=advertisement_id)
+    else:
+        form = AdvertisementForm(instance=advertisement)
+    return render(request, 'edit_advertisement.html', {'form': form})
+
+def delete_advertisement_view(request, advertisement_id):
+    advertisement = get_object_or_404(Advertisement, id=advertisement_id)
+    if request.method == 'POST':
+        advertisement.delete()
+        return redirect('my_advertisements')
+    return render(request, 'delete_advertisement.html', {'advertisement': advertisement})
