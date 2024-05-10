@@ -6,11 +6,12 @@
     <title>Edit Profile</title>
 </head>
 <body>
-    <h2>Edit Profile</h2>
-    <form method="post">
+    <h2>Редагування профілю</h2>
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Save Changes</button>
+        <input type="file" name="photo">
+        <button type="submit">Зберегти зміни</button>
     </form>
 </body>
 </html>

@@ -6,17 +6,17 @@
     <title>Advertisement List</title>
 </head>
 <body>
-    <h1>Advertisement List</h1>
+    <h1>Всі оголошення</h1>
     {% if advertisements %}
         <ul>
             {% for advertisement in advertisements %}
                 <li>
-                    <strong>User:</strong> {{ advertisement.user.username }}<br>
-                    <strong>Title:</strong> {{ advertisement.title }}<br>
-                    <strong>Phone Number:</strong> {{ advertisement.phone_number }}<br>
-                    <strong>Name:</strong> {{ advertisement.user.first_name }} {{ advertisement.user.last_name }}<br>
-                    <strong>City:</strong> {{ advertisement.city }}<br>
-                    <strong>Age:</strong> {{ advertisement.age }}<br>
+                    <strong>Користувач:</strong> {{ advertisement.user.username }}<br>
+                    <strong>Заголовок:</strong> {{ advertisement.title }}<br>
+                    <strong>Номер телефону:</strong> {{ advertisement.phone_number }}<br>
+                    <strong>Ім'я користувача:</strong> {{ advertisement.user.first_name }} {{ advertisement.user.last_name }}<br>
+                    <strong>Населений пункт:</strong> {{ advertisement.city }}<br>
+                    <strong>Вік:</strong> {{ advertisement.age }}<br>
                 </li>
             {% endfor %}
         </ul>

@@ -83,13 +83,23 @@ def advertisement_list(request):
 def edit_profile(request):
     user = request.user
     if request.method == 'POST':
-        form = ProfileEditForm(request.POST, instance=user)
+        form = ProfileEditForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             return redirect('welcome')
     else:
         form = ProfileEditForm(instance=user)
     return render(request, 'edit_profile.html', {'form': form})
+# def edit_profile(request):
+#     user = request.user
+#     if request.method == 'POST':
+#         form = ProfileEditForm(request.POST, instance=user)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('welcome')
+#     else:
+#         form = ProfileEditForm(instance=user)
+#     return render(request, 'edit_profile.html', {'form': form})
 
 def my_advertisements_view(request):
     user = request.user
@@ -100,8 +110,18 @@ def advertisement_detail_view(request, advertisement_id):
     advertisement = get_object_or_404(Advertisement, id=advertisement_id)
     return render(request, 'advertisement_detail.html', {'advertisement': advertisement})
 
-def edit_advertisement_view(request, advertisement_id):
+
+
+def delete_advertisement_view(request, advertisement_id):
     advertisement = get_object_or_404(Advertisement, id=advertisement_id)
+    if request.method == 'POST':
+        advertisement.delete()
+        return redirect('my_advertisements')
+    return render(request, 'home.html', {'advertisement': advertisement})
+
+
+def edit_advertisement(request, advertisement_id):
+    advertisement = get_object_or_404(Advertisement, pk=advertisement_id)
     if request.method == 'POST':
         form = AdvertisementForm(request.POST, instance=advertisement)
         if form.is_valid():
@@ -109,11 +129,9 @@ def edit_advertisement_view(request, advertisement_id):
             return redirect('advertisement_detail', advertisement_id=advertisement_id)
     else:
         form = AdvertisementForm(instance=advertisement)
-    return render(request, 'edit_advertisement.html', {'form': form})
+    return render(request, 'edit_advertisement.html', {'advertisement': advertisement})
 
-def delete_advertisement_view(request, advertisement_id):
-    advertisement = get_object_or_404(Advertisement, id=advertisement_id)
-    if request.method == 'POST':
-        advertisement.delete()
-        return redirect('my_advertisements')
-    return render(request, 'delete_advertisement.html', {'advertisement': advertisement})
+@login_required
+def view_profile(request):
+    user = request.user
+    return render(request, 'view_profile.html', {'user': user})

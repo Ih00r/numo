@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Advertisement</title>
+</head>
+<body>
+    <h2>Редагування оголошення</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Заголовок:</label><br>
+        <input type="text" id="title" name="title" value="{{ advertisement.title }}"><br>
+        <label for="description">Опис:</label><br>
+        <textarea id="description" name="description">{{ advertisement.description }}</textarea><br>
+        <label for="phone_number">Номер телефону:</label><br>
+        <input type="text" id="phone_number" name="phone_number" value="{{ advertisement.phone_number }}"><br>
+        <label for="city">Населений пункт:</label><br>
+        <input type="text" id="city" name="city" value="{{ advertisement.city }}"><br>
+        <label for="age">Вік:</label><br>
+        <input type="number" id="age" name="age" value="{{ advertisement.age }}"><br>
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

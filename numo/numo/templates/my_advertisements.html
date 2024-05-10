@@ -6,19 +6,20 @@
     <title>My Advertisements</title>
 </head>
 <body>
-    <h2>My Advertisements</h2>
+    <h2>Моє оголошення</h2>
     {% if advertisements %}
         <ul>
             {% for ad in advertisements %}
                 <li>
                     <a href="{% url 'advertisement_detail' ad.id %}">{{ ad.title }}</a>
                     <a href="{% url 'edit_advertisement' ad.id %}">Edit</a>
-                    <a href="{% url 'delete_advertisement' ad.id %}">Delete</a>
                 </li>
             {% endfor %}
         </ul>
     {% else %}
-        <p>No advertisements found.</p>
+        <p>Вашого оглошення не знайдено.</p>
+        <a href="{% url 'add_advertisement' %}">Створиит оголошення</a> <br>
+        <a href="{% url 'advertisement_list' %}">Переглянути всі оголошення</a>
     {% endif %}
 </body>
 </html>

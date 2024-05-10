@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/advertisement_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/edit_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/my_advertisements.html" afterDir="false" />
+    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="працює все крім зміни оголошення">
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/edit_advertisement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/view_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/numo/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/add_advertisement.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/add_advertisement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/advertisement_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/advertisement_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/advertisement_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/advertisement_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/my_advertisements.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/my_advertisements.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/views.py" afterDir="false" />
@@ -53,14 +58,12 @@
     &quot;assignee&quot;: &quot;Ih00r&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="e7459e51-1378-4ea5-853a-29b082af0bf8" />
-        <option name="url" value="https://github.com/Ih00r/numo.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ih00r/numo.git&quot;,
+    &quot;accountId&quot;: &quot;e7459e51-1378-4ea5-853a-29b082af0bf8&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -72,24 +75,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py",
+    "settings.editor.selected.configurable": "project.scopes",
+    "two.files.diff.last.used.file": "C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\advertisements" />
       <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates" />
       <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\registration" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="advertisements" />
+    </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -148,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715095864794</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="працює все крім зміни оголошення">
+      <option name="closed" value="true" />
+      <created>1715105654533</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715105654533</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -156,6 +179,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="worked home, reg, log" />
     <MESSAGE value="worked lodin and register" />
-    <option name="LAST_COMMIT_MESSAGE" value="worked lodin and register" />
+    <MESSAGE value="працює все крім зміни оголошення" />
+    <option name="LAST_COMMIT_MESSAGE" value="працює все крім зміни оголошення" />
   </component>
 </project>

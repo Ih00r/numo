@@ -4,13 +4,19 @@ from django.contrib.auth.models import User
 from .models import Advertisement
 
 class CustomUserCreationForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=False)
-    last_name = forms.CharField(max_length=30, required=False)
-    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    first_name = forms.CharField(label="Ім'я", max_length=30, required=False)
+    last_name = forms.CharField(label="Фамілія", max_length=30, required=False)
+    email = forms.EmailField(max_length=254)
 
     class Meta:
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+        labels = {
+            'username': 'Нік користувача'
+        }
+
+
+
 
 
 class AdvertisementForm(forms.ModelForm):
