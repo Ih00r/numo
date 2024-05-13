@@ -7,6 +7,7 @@ from .forms import CustomUserCreationForm, AdvertisementForm, ProfileEditForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Advertisement
+from django.http import JsonResponse
 
 def home(request):
     return render(request, 'home.html', {})
@@ -84,7 +85,13 @@ def edit_profile(request):
     user = request.user
     if request.method == 'POST':
         form = ProfileEditForm(request.POST, request.FILES, instance=user)
-        if form.is_valid():
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        if User.objects.exclude(pk=user.pk).filter(username=username).exists():
+            messages.error(request, 'Користувач з таким ім\'ям користувача вже існує.')
+        elif User.objects.exclude(pk=user.pk).filter(email=email).exists():
+            messages.error(request, 'Користувач з такою електронною поштою вже існує.')
+        elif form.is_valid():
             form.save()
             return redirect('welcome')
     else:
@@ -135,3 +142,13 @@ def edit_advertisement(request, advertisement_id):
 def view_profile(request):
     user = request.user
     return render(request, 'view_profile.html', {'user': user})
+
+
+@login_required
+def delete_profile(request):
+    if request.method == 'POST':
+        user_advertisements = Advertisement.objects.filter(user=request.user)
+        user_advertisements.delete()
+        request.user.delete()
+        return redirect('home')  # Перенаправлення на сторінку home після видалення профілю
+    return redirect('edit_profile')  # Перенаправлення на сторінку редагування профілю, якщо метод не POST

@@ -9,9 +9,30 @@
     <h2>Редагування профілю</h2>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="file" name="photo">
+        <label for="id_username">Нік користувача:</label>
+        {{ form.username }}
+        {% if form.errors.username %}
+            <p>{{ form.errors.username }}</p>
+        {% endif %}<br>
+
+        <label for="id_first_name">Ім'я користувача:</label>
+        {{ form.first_name }}<br>
+
+        <label for="id_last_name">Фамілія користувача:</label>
+        {{ form.last_name }}<br>
+
+        <label for="id_email">Електронна пошта:</label>
+        {{ form.email }}
+        {% if form.errors.email %}
+            <p>{{ form.errors.email }}</p>
+        {% endif %}<br>
+
         <button type="submit">Зберегти зміни</button>
+    </form>
+    <br>
+    <form method="post" action="{% url 'delete_profile' %}">
+        {% csrf_token %}
+        <button type="submit" onclick="return confirm('Ви впевнені, що хочете видалити свій профіль?')">Видалити профіль</button>
     </form>
 </body>
 </html>

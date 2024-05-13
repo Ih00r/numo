@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="працює все крім зміни оголошення">
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/edit_advertisement.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/view_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="працює зміна оголошень редагування профіля, не працює додавання фото в профіль">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/numo/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/add_advertisement.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/add_advertisement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/advertisement_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/advertisement_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/advertisement_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/advertisement_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/edit_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/my_advertisements.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/my_advertisements.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/views.py" afterDir="false" />
     </list>
@@ -75,22 +66,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py",
-    "settings.editor.selected.configurable": "project.scopes",
-    "two.files.diff.last.used.file": "C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\advertisements" />
       <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates" />
+      <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\advertisements" />
       <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\registration" />
     </key>
   </component>
@@ -171,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715105654533</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="працює зміна оголошень редагування профіля, не працює додавання фото в профіль">
+      <option name="closed" value="true" />
+      <created>1715381212863</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715381212863</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -180,6 +179,7 @@
     <MESSAGE value="worked home, reg, log" />
     <MESSAGE value="worked lodin and register" />
     <MESSAGE value="працює все крім зміни оголошення" />
-    <option name="LAST_COMMIT_MESSAGE" value="працює все крім зміни оголошення" />
+    <MESSAGE value="працює зміна оголошень редагування профіля, не працює додавання фото в профіль" />
+    <option name="LAST_COMMIT_MESSAGE" value="працює зміна оголошень редагування профіля, не працює додавання фото в профіль" />
   </component>
 </project>
