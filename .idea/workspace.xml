@@ -7,10 +7,7 @@
     <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="працює зміна оголошень редагування профіля, не працює додавання фото в профіль">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/numo/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/edit_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +52,14 @@
     &quot;accountId&quot;: &quot;e7459e51-1378-4ea5-853a-29b082af0bf8&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Lib/site-packages/django/contrib/auth/locale/uk/LC_MESSAGES/django.po" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/numo/numo/forms.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/numo/numo/templates/edit_profile.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/numo/numo/templates/registration/register.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/numo/numo/urls.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/numo/numo/views.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -74,8 +79,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
-    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -105,6 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714147092137</updated>
+      <workItem from="1715600446514" duration="33000" />
     </task>
     <task id="LOCAL-00001" summary="worked home, reg, log">
       <option name="closed" value="true" />
@@ -170,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715381212863</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="працює зміна оголошень редагування профіля, не працює повідомлення про те що користувач з такою поштою вже існує">
+      <option name="closed" value="true" />
+      <created>1715599888151</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715599888151</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -180,6 +196,7 @@
     <MESSAGE value="worked lodin and register" />
     <MESSAGE value="працює все крім зміни оголошення" />
     <MESSAGE value="працює зміна оголошень редагування профіля, не працює додавання фото в профіль" />
-    <option name="LAST_COMMIT_MESSAGE" value="працює зміна оголошень редагування профіля, не працює додавання фото в профіль" />
+    <MESSAGE value="працює зміна оголошень редагування профіля, не працює повідомлення про те що користувач з такою поштою вже існує" />
+    <option name="LAST_COMMIT_MESSAGE" value="працює зміна оголошень редагування профіля, не працює повідомлення про те що користувач з такою поштою вже існує" />
   </component>
 </project>

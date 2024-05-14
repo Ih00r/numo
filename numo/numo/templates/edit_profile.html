@@ -23,10 +23,18 @@
 
         <label for="id_email">Електронна пошта:</label>
         {{ form.email }}
-        {% if form.errors.email %}
-            <p>{{ form.errors.email }}</p>
-        {% endif %}<br>
+<!--        {% if form.errors.email %}-->
+<!--            <p>{{ form.errors.email }}</p>-->
+<!--        {% endif %}<br>-->
 
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+        <br><br>
         <button type="submit">Зберегти зміни</button>
     </form>
     <br>
@@ -34,5 +42,7 @@
         {% csrf_token %}
         <button type="submit" onclick="return confirm('Ви впевнені, що хочете видалити свій профіль?')">Видалити профіль</button>
     </form>
+
+
 </body>
 </html>
