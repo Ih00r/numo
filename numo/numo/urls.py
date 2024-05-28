@@ -15,4 +15,6 @@ urlpatterns = [
     path('advertisement/<int:advertisement_id>/delete/', views.delete_advertisement_view, name='delete_advertisement'),
     path('profile/', views.view_profile, name='view_profile'),
     path('delete_profile/', views.delete_profile, name='delete_profile'),
+    path('add_job_advertisement/', views.add_job_advertisement, name='add_job_advertisement'),
+    path('job_advertisements/', views.job_advertisements_view, name='job_advertisements'),
 ]

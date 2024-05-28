@@ -6,7 +6,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import CustomUserCreationForm, AdvertisementForm, ProfileEditForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import Advertisement
+from .models import Advertisement, JobAdvertisement
+from .forms import JobAdvertisementForm
 
 
 def home(request):
@@ -153,3 +154,21 @@ def delete_profile(request):
         request.user.delete()
         return redirect('home')
     return redirect('edit_profile')
+
+
+@login_required
+def add_job_advertisement(request):
+    if request.method == 'POST':
+        form = JobAdvertisementForm(request.POST)
+        if form.is_valid():
+            advertisement = form.save(commit=False)
+            advertisement.user = request.user
+            advertisement.save()
+            return redirect('job_advertisement')  # Перенаправлення на список оголошень
+    else:
+        form = JobAdvertisementForm()
+    return render(request, 'add_job_advertisement.html', {'form': form})
+
+def job_advertisements_view(request):
+    job_advertisements = JobAdvertisement.objects.all()
+    return render(request, 'job_advertisements.html', {'job_advertisements': job_advertisements})

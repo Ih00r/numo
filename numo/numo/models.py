@@ -14,3 +14,21 @@ class Advertisement(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class JobAdvertisement(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    min_age = models.PositiveIntegerField()
+    max_age = models.PositiveIntegerField()
+    city = models.CharField(max_length=50)
+    phone_number = models.CharField(max_length=20)
+    payment = models.DecimalField(max_digits=10, decimal_places=2)
+    danger = models.CharField(
+        max_length=1,
+        choices=[('a', 'A'), ('b', 'B'), ('c', 'C'), ('d', 'D')]
+    )
+
+    def __str__(self):
+        return self.title
