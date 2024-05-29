@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ advertisement.title }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ advertisement.title }}</h1>
+    <div class="container">
+        <h2>Опис</h2>
+        <p>{{ advertisement.description }}</p>
+        <p><strong>Вік:</strong> {{ advertisement.min_age }} - {{ advertisement.max_age }}</p>
+        <p><strong>Рівень небезпеки:</strong> {{ advertisement.danger }}</p>
+        <p><strong>Оплата:</strong> {{ advertisement.payment }}</p>
+        <p><strong>Користувач:</strong> {{ advertisement.user.username }}</p>
+        <p><strong>Номер телефону:</strong>{{ advertisement.phone_number }}</p>
+        <a href="{% url 'job_advertisements' %}">Повернутися до списку оголошень</a>
+    </div>
+</body>
+</html>

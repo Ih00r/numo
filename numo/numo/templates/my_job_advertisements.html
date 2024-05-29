@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мої оголошення про пошук робітників</title>
+</head>
+<body>
+    <h1>Мої оголошення про пошук робітників</h1>
+
+    <ul>
+        {% for ad in job_advertisements %}
+        <li>
+            <strong>{{ ad.title }}</strong>
+            <p>{{ ad.description }}</p>
+            <a href="{% url 'edit_job_advertisement' ad.id %}">Редагувати</a>
+            <a href="{% url 'delete_job_advertisement' ad.id %}">Видалити</a>
+        </li>
+        {% empty %}
+        <li>Немає оголошень про пошук робітників.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_job_advertisement' %}">Додати оголошення</a>
+</body>
+</html>

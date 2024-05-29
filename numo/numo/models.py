@@ -27,7 +27,12 @@ class JobAdvertisement(models.Model):
     payment = models.DecimalField(max_digits=10, decimal_places=2)
     danger = models.CharField(
         max_length=1,
-        choices=[('a', 'A'), ('b', 'B'), ('c', 'C'), ('d', 'D')]
+        choices=[
+            ('A', 'A'),
+            ('B', 'B'),
+            ('C', 'C'),
+            ('D', 'D')
+        ]
     )
 
     def __str__(self):

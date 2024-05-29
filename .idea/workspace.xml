@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="все працює">
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/add_job_advertisement.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/job_advertisements.html" afterDir="false" />
+    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="28,05 все ок">
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/edit_job_advertisement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/job_advertisement_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/my_job_advertisements.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/numo/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/job_advertisements.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/job_advertisements.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/view_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/view_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/urls.py" afterDir="false" />
@@ -200,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715689763026</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="28,05 все ок">
+      <option name="closed" value="true" />
+      <created>1716903569312</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716903569312</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -212,6 +222,7 @@
     <MESSAGE value="працює зміна оголошень редагування профіля, не працює додавання фото в профіль" />
     <MESSAGE value="працює зміна оголошень редагування профіля, не працює повідомлення про те що користувач з такою поштою вже існує" />
     <MESSAGE value="все працює" />
-    <option name="LAST_COMMIT_MESSAGE" value="все працює" />
+    <MESSAGE value="28,05 все ок" />
+    <option name="LAST_COMMIT_MESSAGE" value="28,05 все ок" />
   </component>
 </project>

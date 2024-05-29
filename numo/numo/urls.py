@@ -17,4 +17,9 @@ urlpatterns = [
     path('delete_profile/', views.delete_profile, name='delete_profile'),
     path('add_job_advertisement/', views.add_job_advertisement, name='add_job_advertisement'),
     path('job_advertisements/', views.job_advertisements_view, name='job_advertisements'),
+    path('job_advertisements/<int:advertisement_id>/', views.job_advertisement_detail_view, name='job_advertisement_detail'),  # Новий маршрут для перегляду деталей оголошення про пошук робітників
+
+    path('my_job_advertisements/', views.my_job_advertisements, name='my_job_advertisements'),
+    path('edit/<int:id>/', views.edit_job_advertisement, name='edit_job_advertisement'),
+    path('delete/<int:ad_id>/', views.delete_job_advertisement, name='delete_job_advertisement')
 ]

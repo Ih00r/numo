@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редагувати оголошення про пошук робітників</title>
+</head>
+<body>
+    <h1>Редагувати оголошення про пошук робітників</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Зберегти</button>
+    </form>
+</body>
+</html>

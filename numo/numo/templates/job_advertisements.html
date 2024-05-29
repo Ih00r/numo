@@ -49,6 +49,15 @@
             margin: 5px 0;
         }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         @media (min-width: 600px) {
             li {
                 margin: 20px auto;
@@ -58,17 +67,18 @@
     </style>
 </head>
 <body>
-    <h1>Пошку працівників</h1>
+    <h1>Пошук працівників</h1>
     <ul>
         {% for advertisement in job_advertisements %}
             <li>
-                <h2>{{ advertisement.title }}</h2>
+                <a href="{% url 'job_advertisement_detail' advertisement.id %}">
+                    <h2>{{ advertisement.title }}</h2>
+                </a>
                 <p><strong>Опис:</strong></p>
                 <p>{{ advertisement.description }}</p>
-                <p><strong>Вік:</strong>{{advertisement.min_age}}-{{advertisement.max_age}}</p>
-                <p><strong>Рівень небезпеки: </strong>{{advertisement.danger}}</p>
+                <p><strong>Вік:</strong> {{ advertisement.min_age }} - {{ advertisement.max_age }}</p>
+                <p><strong>Рівень небезпеки:</strong> {{ advertisement.danger }}</p>
                 <p><strong>Оплата:</strong> {{ advertisement.payment }}</p>
-
             </li>
         {% endfor %}
     </ul>

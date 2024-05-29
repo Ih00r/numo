@@ -143,7 +143,19 @@ def edit_advertisement(request, advertisement_id):
 @login_required
 def view_profile(request):
     user = request.user
-    return render(request, 'view_profile.html', {'user': user})
+    advertisements = Advertisement.objects.filter(user=user)
+    job_advertisements = JobAdvertisement.objects.filter(user=user)
+    return render(request, 'view_profile.html', {
+        'user': user,
+        'advertisements': advertisements,
+        'job_advertisements': job_advertisements
+    })
+# def view_profile(request):
+#     user = request.user
+#     advertisements = Advertisement.objects.filter(user=user)
+#     job_advertisements = JobAdvertisement.objects.filter(user=user)
+#     return render(request, 'view_profile.html', {'user': user, 'advertisements': advertisements,
+#                                                  'job_advertisements': job_advertisements})
 
 
 @login_required
@@ -151,6 +163,8 @@ def delete_profile(request):
     if request.method == 'POST':
         user_advertisements = Advertisement.objects.filter(user=request.user)
         user_advertisements.delete()
+        user_job_advertisements = JobAdvertisement.objects.filter(user=request.user)
+        user_job_advertisements.delete()
         request.user.delete()
         return redirect('home')
     return redirect('edit_profile')
@@ -164,7 +178,7 @@ def add_job_advertisement(request):
             advertisement = form.save(commit=False)
             advertisement.user = request.user
             advertisement.save()
-            return redirect('job_advertisement')  # Перенаправлення на список оголошень
+            return redirect('job_advertisements')  # Перенаправлення на список оголошень
     else:
         form = JobAdvertisementForm()
     return render(request, 'add_job_advertisement.html', {'form': form})
@@ -172,3 +186,33 @@ def add_job_advertisement(request):
 def job_advertisements_view(request):
     job_advertisements = JobAdvertisement.objects.all()
     return render(request, 'job_advertisements.html', {'job_advertisements': job_advertisements})
+
+def my_job_advertisements(request):
+    user = request.user
+    job_advertisements = JobAdvertisement.objects.filter(user=user)
+    return render(request, 'my_job_advertisements.html', {'job_advertisements': job_advertisements})
+
+
+def edit_job_advertisement(request, id):
+    advertisement = get_object_or_404(JobAdvertisement, id=id)
+    if request.method == 'POST':
+        form = JobAdvertisementForm(request.POST, instance=advertisement)
+        if form.is_valid():
+            form.save()
+            return redirect('edit_job_advertisement', id=advertisement.id)
+    else:
+        form = JobAdvertisementForm(instance=advertisement)
+    return render(request, 'edit_job_advertisement.html', {'form': form})
+
+
+def delete_job_advertisement(request, ad_id):
+    advertisement = get_object_or_404(JobAdvertisement, id=ad_id)
+
+    if request.method == 'POST':
+        advertisement.delete()
+        return redirect('my_job_advertisements')
+    return render(request, 'confirm_delete.html', {'advertisement': advertisement})
+
+def job_advertisement_detail_view(request, advertisement_id):
+    advertisement = get_object_or_404(JobAdvertisement, id=advertisement_id)
+    return render(request, 'job_advertisement_detail.html', {'advertisement': advertisement})
