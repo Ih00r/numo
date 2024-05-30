@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переглянути мої благодійні оголошення</title>
+</head>
+<body>
+    <h1>Переглянути мої благодійні оголошення</h1>
+
+    {% if my_charities %}
+        <ul>
+            {% for charity in my_charities %}
+                <li>
+                    <h3>{{ charity.title }}</h3>
+                    <p>{{ charity.description }}</p>
+                    <p><strong>Вік:</strong> від {{ charity.min_age }} до {{ charity.max_age }}</p>
+                    <p><strong>Телефон:</strong> {{ charity.phone_number }}</p>
+                    <p><strong>Клас небезпеки:</strong> {{ charity.danger_class }}</p>
+                    <a href="{% url 'edit_charity_advertisement' charity.id %}">Редагувати</a>
+                    <form method="post" action="{% url 'delete_charity_advertisement' charity.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Видалити</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Ви ще не створили жодного благодійного оголошення.</p>
+        <p>Створіть нове оголошення за посиланням:</p>
+        <a href="{% url 'add_charity_advertisement' %}">Створити нове оголошення</a>
+    {% endif %}
+
+</body>
+</html>

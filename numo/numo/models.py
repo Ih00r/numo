@@ -37,3 +37,22 @@ class JobAdvertisement(models.Model):
 
     def __str__(self):
         return self.title
+
+class Charity(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    min_age = models.IntegerField()
+    max_age = models.IntegerField()
+    city = models.CharField(max_length=50)
+    phone_number = models.CharField(max_length=15)
+    danger_class = models.CharField(max_length=1,
+        choices=[
+        ('A', 'A'),
+        ('B', 'B'),
+        ('C', 'C'),
+        ('D', 'D')
+        ])
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title

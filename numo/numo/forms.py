@@ -1,8 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Advertisement, JobAdvertisement
-
+from .models import Advertisement, JobAdvertisement, Charity
 
 class CustomUserCreationForm(UserCreationForm):
     first_name = forms.CharField(label="Ім'я", max_length=30, required=False)
@@ -29,3 +28,8 @@ class JobAdvertisementForm(forms.ModelForm):
     class Meta:
         model = JobAdvertisement
         fields = ['title', 'description', 'min_age', 'max_age', 'city', 'phone_number', 'payment', 'danger']
+
+class CharityForm(forms.ModelForm):
+    class Meta:
+        model = Charity
+        fields = ['title', 'description', 'min_age', 'max_age', 'city', 'phone_number', 'danger_class']

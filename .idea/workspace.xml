@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="28,05 все ок">
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/edit_job_advertisement.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/job_advertisement_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/my_job_advertisements.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/add_charity_advertisement.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/charity_advertisement_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/charity_advertisements.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/confirm_delete_charity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/edit_charity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/numo/numo/templates/my_charity_advertisements.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/numo/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/job_advertisements.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/job_advertisements.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/view_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/view_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/urls.py" afterDir="false" />

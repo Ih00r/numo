@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі благодійного оголошення</title>
+</head>
+<body>
+    <h1>Деталі благодійного оголошення</h1>
+    <h2>{{ charity.title }}</h2>
+    <p><strong>Опис:</strong> {{ charity.description }}</p>
+    <p><strong>Вік:</strong> від {{ charity.min_age }} до {{ charity.max_age }}</p>
+    <p><strong>Телефон:</strong> {{ charity.phone_number }}</p>
+    <p><strong>Клас небезпеки:</strong> {{ charity.danger_class }}</p>
+</body>
+</html>

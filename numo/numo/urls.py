@@ -18,8 +18,13 @@ urlpatterns = [
     path('add_job_advertisement/', views.add_job_advertisement, name='add_job_advertisement'),
     path('job_advertisements/', views.job_advertisements_view, name='job_advertisements'),
     path('job_advertisements/<int:advertisement_id>/', views.job_advertisement_detail_view, name='job_advertisement_detail'),  # Новий маршрут для перегляду деталей оголошення про пошук робітників
-
     path('my_job_advertisements/', views.my_job_advertisements, name='my_job_advertisements'),
     path('edit/<int:id>/', views.edit_job_advertisement, name='edit_job_advertisement'),
-    path('delete/<int:ad_id>/', views.delete_job_advertisement, name='delete_job_advertisement')
+    path('delete/<int:ad_id>/', views.delete_job_advertisement, name='delete_job_advertisement'),
+    path('add_charity_advertisement/', views.add_charity_advertisement, name='add_charity_advertisement'),
+    path('charity_advertisements/', views.charity_advertisements, name='charity_advertisements'),
+    path('my_charity_advertisements/', views.my_charity_advertisements, name='my_charity_advertisements'),
+    path('edit_charity_advertisement/<int:charity_id>/', views.edit_charity_advertisement, name='edit_charity_advertisement'),
+    path('delete_charity_advertisement/<int:charity_id>/', views.delete_charity_advertisement, name='delete_charity_advertisement'),
+    path('charity_advertisement_detail/<int:charity_id>/', views.charity_advertisement_detail, name='charity_advertisement_detail'),
 ]

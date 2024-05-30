@@ -6,8 +6,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import CustomUserCreationForm, AdvertisementForm, ProfileEditForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import Advertisement, JobAdvertisement
-from .forms import JobAdvertisementForm
+from .models import Advertisement, JobAdvertisement, Charity
+from .forms import JobAdvertisementForm, CharityForm
 
 
 def home(request):
@@ -216,3 +216,47 @@ def delete_job_advertisement(request, ad_id):
 def job_advertisement_detail_view(request, advertisement_id):
     advertisement = get_object_or_404(JobAdvertisement, id=advertisement_id)
     return render(request, 'job_advertisement_detail.html', {'advertisement': advertisement})
+
+def add_charity_advertisement(request):
+    if request.method == 'POST':
+        form = CharityForm(request.POST)
+        if form.is_valid():
+            charity = form.save(commit=False)
+            charity.user = request.user
+            charity.save()
+            return redirect('charity_advertisements')
+    else:
+        form = CharityForm()
+    return render(request, 'add_charity_advertisement.html', {'form': form})
+
+def charity_advertisements(request):
+    charities = Charity.objects.all()
+    return render(request, 'charity_advertisements.html', {'charities': charities})
+
+def edit_charity_advertisement(request, charity_id):
+    charity = get_object_or_404(Charity, id=charity_id)
+    if request.method == 'POST':
+        form = CharityForm(request.POST, instance=charity)
+        if form.is_valid():
+            form.save()
+            return redirect('my_charity_advertisements')
+    else:
+        form = CharityForm(instance=charity)
+    return render(request, 'edit_charity.html', {'form': form})
+
+def delete_charity_advertisement(request, charity_id):
+    charity = get_object_or_404(Charity, id=charity_id)
+    if request.method == 'POST':
+        charity.delete()
+        return redirect('my_charity_advertisements')
+    return render(request, 'delete_charity_advertisement.html', {'charity': charity})
+
+def charity_advertisement_detail(request, charity_id):
+    charity = get_object_or_404(Charity, id=charity_id)
+    my_charity_advertisements = Charity.objects.filter(user=request.user)
+    return render(request, 'charity_advertisement_detail.html', {'charity': charity, 'my_charity_advertisements': my_charity_advertisements})
+
+def my_charity_advertisements(request):
+    my_charities = Charity.objects.filter(user=request.user)
+    return render(request, 'my_charity_advertisements.html', {'my_charities': my_charities})
+

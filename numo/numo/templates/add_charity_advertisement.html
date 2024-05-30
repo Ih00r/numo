@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати благодійне оголошення</title>
+</head>
+<body>
+    <h1>Додати благодійне оголошення</h1>
+    <form method="post" action="{% url 'add_charity_advertisement' %}">
+        {% csrf_token %}
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title"><br><br>
+
+        <label for="description">Опис:</label>
+        <textarea id="description" name="description"></textarea><br><br>
+
+        <label for="min_age">Мінімальний вік:</label>
+        <input type="number" id="min_age" name="min_age"><br><br>
+
+        <label for="max_age">Максимальний вік:</label>
+        <input type="number" id="max_age" name="max_age"><br><br>
+
+        <label for="city">Місто</label>
+        <input type="text" id="city" name="city"><br><br>
+
+        <label for="phone_number">Номер телефону:</label>
+        <input type="text" id="phone_number" name="phone_number"><br><br>
+
+        <label for="danger_class">Клас небезпеки:</label>
+        <select id="danger_class" name="danger_class">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select><br><br>
+
+        <button type="submit">Додати</button>
+    </form>
+</body>
+</html>

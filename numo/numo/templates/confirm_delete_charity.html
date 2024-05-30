@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видалити Благодійне Оголошення</title>
+</head>
+<body>
+    <h2>Видалити Благодійне Оголошення</h2>
+    <p>Ви впевнені, що хочете видалити оголошення "{{ charity.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Видалити</button>
+    </form>
+    <a href="{% url 'view_profile' %}">Назад до профілю</a>
+</body>
+</html>
