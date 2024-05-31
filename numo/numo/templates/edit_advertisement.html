@@ -6,6 +6,7 @@
     <title>Edit Advertisement</title>
 </head>
 <body>
+
     <h2>Редагування оголошення</h2>
     <form method="post">
         {% csrf_token %}
@@ -19,7 +20,12 @@
         <input type="text" id="city" name="city" value="{{ advertisement.city }}"><br>
         <label for="age">Вік:</label><br>
         <input type="number" id="age" name="age" value="{{ advertisement.age }}"><br>
-        <input type="submit" value="Save">
+        <!-- Перевірка, чи поточний користувач є автором оголошення -->
+        {% if advertisement.user_id != request.user %}
+            <p>Ви не маєте права редагувати це оголошення.</p>
+        {% else %}
+            <input type="submit" value="Save">
+        {% endif %}
     </form>
 </body>
 </html>

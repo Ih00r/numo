@@ -1,16 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Job Advertisement</title>
+    <title>Додати оголошення про роботу</title>
+
 </head>
 <body>
-    <h2>Add Job Advertisement</h2>
     <form method="post">
+        <h2>Додати оголошення про роботу</h2>
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
+
+        <label for="title">Назва:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="description">Опис:</label>
+        <input id="description" name="description" required><br>
+
+        <label for="phone_number">Номер телефону:</label>
+        <input type="tel" id="phone_number" name="phone_number" required pattern="\+?\d{10,15}"><br>
+
+        <label for="city">Місто:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="min_age">Мінімальний вік:</label>
+        <input type="number" id="min_age" name="min_age" min="0" required><br>
+
+        <label for="max_age">Максимальний вік:</label>
+        <input type="number" id="max_age" name="max_age" min="0" required><br>
+
+        <label for="payment">Зарплата:</label>
+        <input type="number" id="payment" name="payment" min="100" required><br>
+
+        <label for="danger">Клас небезпеки:</label>
+        <select id="danger" name="danger" required>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select><br>
+
+        <button type="submit">Створити оголошення</button>
     </form>
 </body>
 </html>

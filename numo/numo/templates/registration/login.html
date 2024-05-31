@@ -1,29 +1,115 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            background-color: #4B6982;
+            color: white;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .container {
+            background: white;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            margin: auto;
+        }
+        h2 {
+            margin-bottom: 1.5em;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 1em 0 0.5em;
+            color: #666;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 2em);
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background: #4facfe;
+            color: white;
+            border: none;
+            padding: 0.75em 2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background: #00c1fe;
+        }
+        .messages {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5em;
+        }
+        .messages li {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 0.5em;
+            border-radius: 5px;
+            margin-bottom: 0.5em;
+        }
+    </style>
 </head>
 <body>
-{% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-
-    <h2>Увійти</h2>
-    <form method="post">
-        {% csrf_token %}
-        <label for="username">Ім'я користувача:</label>
-        <input type="text" id="username" name="username">
-        <br>
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password">
-        <br>
-        <input type="submit" value="Увійти">
-    </form>
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Логотип">
+        </div>
+        <div class="nav-buttons">
+            <!-- Buttons can be added here in the future -->
+        </div>
+    </div>
+    <div class="container">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <h2>Увійти</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Нік користувача:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Увійти">
+            <p>У вас ще немає аккаунту?</p>
+            <a href="{% url 'register' %}">Створити аккаунт</a>
+        </form>
+    </div>
 </body>
 </html>

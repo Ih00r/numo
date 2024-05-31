@@ -4,24 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advertisement List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            margin: 0;
+        }
+
+        .filter-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .filter-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-form label {
+            margin: 10px 0 5px;
+        }
+
+        .filter-form input, .filter-form select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .filter-form button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-form button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: white;
+            margin: 15px 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 600px) {
+            li {
+                margin: 20px auto;
+                max-width: 600px;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Всі оголошення</h1>
-    {% if advertisements %}
-        <ul>
+    <div class="filter-form">
+        <form method="get">
+            <label for="id_min_age">Мінімальний вік</label>
+            <input type="number" name="min_age" id="id_min_age" value="{{ form.min_age.value }}">
+
+            <label for="id_max_age">Максимальний вік</label>
+            <input type="number" name="max_age" id="id_max_age" value="{{ form.max_age.value }}">
+
+            <label for="id_city">Місто</label>
+            <select name="city" id="id_city">
+                {% for value, label in form.city.field.choices %}
+                    <option value="{{ value }}" {% if form.city.value == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Фільтрувати</button>
+        </form>
+    </div>
+    <ul>
+        {% if advertisements %}
             {% for advertisement in advertisements %}
                 <li>
-                    <strong>Користувач:</strong> {{ advertisement.user.username }}<br>
+                    <a href="{% url 'advertisement_detail' advertisement.id %}">
+                        <h2>{{ advertisement.title }}</h2>
+                    </a>
                     <strong>Заголовок:</strong> {{ advertisement.title }}<br>
-                    <strong>Номер телефону:</strong> {{ advertisement.phone_number }}<br>
-                    <strong>Ім'я користувача:</strong> {{ advertisement.user.first_name }} {{ advertisement.user.last_name }}<br>
                     <strong>Населений пункт:</strong> {{ advertisement.city }}<br>
                     <strong>Вік:</strong> {{ advertisement.age }}<br>
                 </li>
             {% endfor %}
-        </ul>
-    {% else %}
-        <p>No advertisements available.</p>
-    {% endif %}
+        {% else %}
+            <p>No advertisements available.</p>
+        {% endif %}
+    </ul>
 </body>
 </html>

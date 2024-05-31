@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Advertisement</title>
+
 </head>
 <body>
-    <h2>Створення оголошення</h2>
+<h2>Створення оголошення</h2>
     {% if advertisement_added %}
         <p>Оголошення вже додано.</p>
         <a href="{% url 'advertisement_list' %}">Перейти до списку оголошень</a>
     {% else %}
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+
+            <label for="title">Заголовок:</label>
+            <input type="text" id="title" name="title"><br><br>
+
+            <label for="description">Опис:</label>
+            <input type="text" id="description" name="description"><br><br>
+
+            <label for="phone_number">Номер телефону:</label>
+            <input type="text" id="phone_number" name="phone_number"><br><br>
+
+            <label for="city">Місто:</label>
+            <input type="text" id="city" name="city"><br><br>
+
+            <label for="age">Вік:</label>
+            <input type="number" id="age" name="age"><br><br>
+
+
+
+
+
             <button type="submit">Submit</button>
         </form>
     {% endif %}

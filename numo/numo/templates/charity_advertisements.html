@@ -4,24 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Переглянути благодійні оголошення</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            margin: 0;
+        }
+
+        .filter-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .filter-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-form label {
+            margin: 10px 0 5px;
+        }
+
+        .filter-form input, .filter-form select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .filter-form button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-form button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: white;
+            margin: 15px 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 600px) {
+            li {
+                margin: 20px auto;
+                max-width: 600px;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Переглянути благодійні оголошення</h1>
+    <div class="filter-form">
+        <form method="get">
+            <label for="id_age">Вік</label>
+            <input type="number" name="age" id="id_age" value="{{ form.age.value }}">
+
+            <label for="id_city">Місто</label>
+            <select name="city" id="id_city">
+                {% for value, label in form.city.field.choices %}
+                    <option value="{{ value }}" {% if form.city.value == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="id_danger_class">Клас небезпеки</label>
+            <select name="danger_class" id="id_danger_class">
+                {% for value, label in form.danger_class.field.choices %}
+                    <option value="{{ value }}" {% if form.danger_class.value == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Фільтрувати</button>
+        </form>
+    </div>
     <ul>
-        {% for charity in charities %}
-            <li>
-                <h3>{{ charity.title }}</h3>
-                <p>{{ charity.description }}</p>
-                <p><strong>Вік:</strong> від {{ charity.min_age }} до {{ charity.max_age }}</p>
-                <p><strong>Телефон:</strong> {{ charity.phone_number }}</p>
-                <p><strong>Клас небезпеки:</strong> {{ charity.danger_class }}</p>
-                <a href="{% url 'edit_charity_advertisement' charity.id %}">Редагувати</a>
-                <form method="post" action="{% url 'delete_charity_advertisement' charity.id %}">
-                    {% csrf_token %}
-                    <button type="submit">Видалити</button>
-                </form>
-            </li>
-        {% endfor %}
+        {% if charities %}
+            {% for charity in charities %}
+                <li>
+                    <h3>{{ charity.title }}</h3>
+                    <a href="{% url 'charity_advertisement_detail' charity.id %}"><p>{{ charity.description }}</p></a>
+                    <p><strong>Вік:</strong> від {{ charity.min_age }} до {{ charity.max_age }}</p>
+                    <p><strong>Телефон:</strong> {{ charity.phone_number }}</p>
+                    <p><strong>Клас небезпеки:</strong> {{ charity.danger_class }}</p>
+                    <br><br>
+                </li>
+            {% endfor %}
+        {% else %}
+            <p>No advertisements available.</p>
+        {% endif %}
     </ul>
 </body>
 </html>

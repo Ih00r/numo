@@ -9,13 +9,9 @@
     <h2>Деталі оголошення</h2>
     <p><strong>Заголовок:</strong> {{ advertisement.title }}</p>
     <p><strong>Опис:</strong> {{ advertisement.description }}</p>
-    <p><strong>Номер телефону:</strong> {{ advertisement.phone_number }}</p>
     <p><strong>Населений пункт:</strong> {{ advertisement.city }}</p>
     <p><strong>Вік:</strong> {{ advertisement.age }}</p>
-    <a href="{% url 'edit_advertisement' advertisement.id %}">Змінити оголошення</a> <br><br>
-    <form action="{% url 'delete_advertisement' advertisement.id %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Видалити оголошення</button>
-    </form>
+    <p><strong>Ім'я користувача: </strong>{{ advertisement.user.first_name }} {{ advertisement.user.last_name }}</p>
+    <p><strong>Номер телефону:</strong> {{ advertisement.phone_number }}</p>
 </body>
 </html>

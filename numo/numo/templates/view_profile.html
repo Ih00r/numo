@@ -16,22 +16,16 @@
     <form action="{% url 'edit_profile' %}" method="get">
         <button type="submit" class="btn">Редагувати профіль</button>
     </form>
-
-    <h3>Оголошення про пошук роботи</h3>
-    <ul>
-        {% for advertisement in advertisements %}
-            <li><a href="{% url 'advertisement_detail' advertisement.id %}">{{ advertisement.title }}</a></li>
-        {% endfor %}
-    </ul>
-
-    <h3>Оголошення про пошук працівників</h3>
-    <ul>
-        {% for advertisement in job_advertisements %}
-            <li><a href="{% url 'job_advertisement_detail' advertisement.id %}">{{ advertisement.title }}</a></li>
-        {% endfor %}
-    </ul>
     <ul>
     <li><a href="{% url 'my_charity_advertisements' %}">Переглянути мої благодійні оголошення</a></li>
+    </ul>
+
+    <ul>
+    <li><a href="{% url 'my_advertisements' %}">Переглянути моє оголошення про пошук роботи</a></li>
+    </ul>
+
+    <ul>
+    <li><a href="{% url 'my_job_advertisements' %}">Переглянути мої оголошення про пошук робітників</a></li>
     </ul>
 </body>
 </html>

@@ -21,6 +21,45 @@
             margin: 0;
         }
 
+        .filter-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .filter-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-form label {
+            margin: 10px 0 5px;
+        }
+
+        .filter-form input, .filter-form select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .filter-form button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-form button:hover {
+            background-color: #45a049;
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
@@ -68,6 +107,31 @@
 </head>
 <body>
     <h1>Пошук працівників</h1>
+    <div class="filter-form">
+        <form method="get">
+            <label for="id_age">Вік</label>
+            <input type="number" name="age" id="id_age" value="{{ form.age.value }}">
+
+            <label for="id_city">Місто</label>
+            <select name="city" id="id_city">
+                {% for value, label in form.city.field.choices %}
+                    <option value="{{ value }}" {% if form.city.value == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="id_danger">Клас небезпеки</label>
+            <select name="danger" id="id_danger">
+                {% for value, label in form.danger.field.choices %}
+                    <option value="{{ value }}" {% if form.danger.value == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="id_min_payment">Мінімальна оплата</label>
+            <input type="number" step="0.01" name="min_payment" id="id_min_payment" value="{{ form.min_payment.value }}">
+
+            <button type="submit">Фільтрувати</button>
+        </form>
+    </div>
     <ul>
         {% for advertisement in job_advertisements %}
             <li>

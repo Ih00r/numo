@@ -7,7 +7,7 @@ from .forms import CustomUserCreationForm, AdvertisementForm, ProfileEditForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Advertisement, JobAdvertisement, Charity
-from .forms import JobAdvertisementForm, CharityForm
+from .forms import JobAdvertisementForm, CharityForm, AdvertisementFilterForm
 
 
 def home(request):
@@ -79,7 +79,24 @@ def add_advertisement(request):
 
 def advertisement_list(request):
     advertisements = Advertisement.objects.all()
-    return render(request, 'advertisement_list.html', {'advertisements': advertisements})
+
+    if request.method == 'GET':
+        form = AdvertisementFilterForm(request.GET, cities=Advertisement.objects.values_list('city', flat=True).distinct())
+        if form.is_valid():
+            min_age = form.cleaned_data.get('min_age')
+            max_age = form.cleaned_data.get('max_age')
+            city = form.cleaned_data.get('city')
+
+            if min_age is not None:
+                advertisements = advertisements.filter(age__gte=min_age)
+            if max_age is not None:
+                advertisements = advertisements.filter(age__lte=max_age)
+            if city:
+                advertisements = advertisements.filter(city=city)
+    else:
+        form = AdvertisementFilterForm(cities=Advertisement.objects.values_list('city', flat=True).distinct())
+
+    return render(request, 'advertisement_list.html', {'form': form, 'advertisements': advertisements})
 
 @login_required
 def edit_profile(request):
@@ -99,16 +116,7 @@ def edit_profile(request):
     else:
         form = ProfileEditForm(instance=user)
     return render(request, 'edit_profile.html', {'form': form})
-# def edit_profile(request):
-#     user = request.user
-#     if request.method == 'POST':
-#         form = ProfileEditForm(request.POST, instance=user)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('welcome')
-#     else:
-#         form = ProfileEditForm(instance=user)
-#     return render(request, 'edit_profile.html', {'form': form})
+
 
 def my_advertisements_view(request):
     user = request.user
@@ -150,12 +158,6 @@ def view_profile(request):
         'advertisements': advertisements,
         'job_advertisements': job_advertisements
     })
-# def view_profile(request):
-#     user = request.user
-#     advertisements = Advertisement.objects.filter(user=user)
-#     job_advertisements = JobAdvertisement.objects.filter(user=user)
-#     return render(request, 'view_profile.html', {'user': user, 'advertisements': advertisements,
-#                                                  'job_advertisements': job_advertisements})
 
 
 @login_required
@@ -183,9 +185,31 @@ def add_job_advertisement(request):
         form = JobAdvertisementForm()
     return render(request, 'add_job_advertisement.html', {'form': form})
 
+
 def job_advertisements_view(request):
     job_advertisements = JobAdvertisement.objects.all()
-    return render(request, 'job_advertisements.html', {'job_advertisements': job_advertisements})
+
+    if request.method == 'GET':
+        form = AdvertisementFilterForm(request.GET,
+                                          cities=JobAdvertisement.objects.values_list('city', flat=True).distinct())
+        if form.is_valid():
+            age = form.cleaned_data.get('age')
+            city = form.cleaned_data.get('city')
+            danger = form.cleaned_data.get('danger')
+            min_payment = form.cleaned_data.get('min_payment')
+
+            if age is not None:
+                job_advertisements = job_advertisements.filter(min_age__lte=age, max_age__gte=age)
+            if city:
+                job_advertisements = job_advertisements.filter(city=city)
+            if danger:
+                job_advertisements = job_advertisements.filter(danger=danger)
+            if min_payment is not None:
+                job_advertisements = job_advertisements.filter(payment__gte=min_payment)
+    else:
+        form = AdvertisementFilterForm(cities=JobAdvertisement.objects.values_list('city', flat=True).distinct())
+
+    return render(request, 'job_advertisements.html', {'form': form, 'job_advertisements': job_advertisements})
 
 def my_job_advertisements(request):
     user = request.user
@@ -231,7 +255,24 @@ def add_charity_advertisement(request):
 
 def charity_advertisements(request):
     charities = Charity.objects.all()
-    return render(request, 'charity_advertisements.html', {'charities': charities})
+
+    if request.method == 'GET':
+        form = AdvertisementFilterForm(request.GET, cities=Charity.objects.values_list('city', flat=True).distinct())
+        if form.is_valid():
+            age = form.cleaned_data.get('age')
+            city = form.cleaned_data.get('city')
+            danger_class = form.cleaned_data.get('danger_class')
+
+            if age is not None:
+                charities = charities.filter(min_age__lte=age, max_age__gte=age)
+            if city:
+                charities = charities.filter(city=city)
+            if danger_class:
+                charities = charities.filter(danger_class=danger_class)
+    else:
+        form = AdvertisementFilterForm(cities=Charity.objects.values_list('city', flat=True).distinct())
+
+    return render(request, 'charity_advertisements.html', {'form': form, 'charities': charities})
 
 def edit_charity_advertisement(request, charity_id):
     charity = get_object_or_404(Charity, id=charity_id)

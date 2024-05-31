@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="28,05 все ок">
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/add_charity_advertisement.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/charity_advertisement_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/charity_advertisements.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/confirm_delete_charity.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/edit_charity.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numo/numo/templates/my_charity_advertisements.html" afterDir="false" />
+    <list default="true" id="ebd63e3a-91fa-4042-9718-e98369a974fb" name="Changes" comment="30,05 все ок">
+      <change afterPath="$PROJECT_DIR$/numo/static/images/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/numo/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/add_advertisement.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/add_advertisement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/add_job_advertisement.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/add_job_advertisement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/advertisement_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/advertisement_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/advertisement_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/advertisement_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/charity_advertisements.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/charity_advertisements.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/edit_advertisement.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/edit_advertisement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/edit_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/job_advertisements.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/job_advertisements.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numo/numo/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/registration/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/templates/view_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/view_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/templates/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numo/numo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/numo/numo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/numo/numo/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +73,9 @@
     <setting file="file://$PROJECT_DIR$/numo/numo/urls.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/numo/numo/views.py" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -88,6 +94,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Игорь/PycharmProjects/numo/numo/numo/views.py&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
@@ -97,9 +104,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\static\images" />
+      <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\registration" />
+      <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\image" />
       <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates" />
       <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\advertisements" />
-      <recent name="C:\Users\Игорь\PycharmProjects\numo\numo\numo\templates\registration" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -212,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716903569312</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="30,05 все ок">
+      <option name="closed" value="true" />
+      <created>1717072400306</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717072400306</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,6 +242,7 @@
     <MESSAGE value="працює зміна оголошень редагування профіля, не працює повідомлення про те що користувач з такою поштою вже існує" />
     <MESSAGE value="все працює" />
     <MESSAGE value="28,05 все ок" />
-    <option name="LAST_COMMIT_MESSAGE" value="28,05 все ок" />
+    <MESSAGE value="30,05 все ок" />
+    <option name="LAST_COMMIT_MESSAGE" value="30,05 все ок" />
   </component>
 </project>
